@@ -6,16 +6,25 @@
   "repository": "https://github.com/Essa-Media/EssaGalleryBot",
   "author": "Muhammad Raihan Al Farizy <mraihanaf0@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "npx nodemon ./src/index.ts | npx pino-pretty",
+    "dev-no-pretty": "npx nodemon ./src/index.ts",
+    "build": "tsc",
+    "production": "node ."
+  },
   "devDependencies": {
     "@types/node": "^22.5.4",
     "@types/pino": "^7.0.5",
     "nodemon": "^3.1.4",
+    "pino-pretty": "^11.2.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
   "dependencies": {
     "cloudinary": "^2.4.0",
     "discord.js": "^14.16.1",
     "dotenv": "^16.4.5",
-    "ioredis": "^5.4.1"
+    "ioredis": "^5.4.1",
+    "pino": "^9.4.0"
   }
 }
