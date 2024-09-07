@@ -3,7 +3,6 @@ import { readdirSync } from "fs"
 import { Client } from "discord.js"
 import { IEvent } from "../types"
 import { log } from "."
-import logger from "../utils/logger"
 
 const eventPath: string = join(__dirname, "../events")
 const eventFiles: string[] = readdirSync(eventPath).filter(file => file.endsWith(".js") || file.endsWith(".ts"))
@@ -17,7 +16,7 @@ export async function registerEvents(client: Client){
         } else {
             client.on(event.name, (...args) => event.execute(...args))
         }
-        log.debug(`registered ${event.name} event.`)
+        log.debug(`Registered "${event.name}" event. once: ${event.once}`)
     }
     log.info("Events registered.")
 }
