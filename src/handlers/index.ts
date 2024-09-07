@@ -1,9 +1,9 @@
 import { Client } from "discord.js"
-import parrentLogger from "../utils/logger"
+import { handlersLogger } from "../utils/logger"
 import { registerCommands } from "./commands"
 import { registerEvents } from "./events"
 
-export const log = parrentLogger.child({ module: "handlers"})
+export const log = handlersLogger
 
 export default async function loadHandler(client: Client){
     await registerCommands(client)

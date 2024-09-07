@@ -1,6 +1,6 @@
 import { Events, Client } from "discord.js"
 import { loadFeatures } from "../handlers/features" 
-import log from "../utils/logger"
+import { eventsLogger as log } from "../utils/logger"
 
 export default {
     name: Events.ClientReady,
