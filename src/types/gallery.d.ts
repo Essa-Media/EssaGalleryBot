@@ -7,4 +7,4 @@ export interface IGalleryMedia {
     url: string
 }
 
-export type IGallery = IGallery[]
+export type IGallery = IGalleryMedia[]
