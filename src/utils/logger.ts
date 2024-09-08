@@ -1,4 +1,6 @@
 import pino, { Logger } from "pino"
+import { config } from "dotenv"
+config()
 const logger: Logger = pino({
     name: "EssaGalleryBot",
     level: process.env.LOG_LEVEL || "debug"
