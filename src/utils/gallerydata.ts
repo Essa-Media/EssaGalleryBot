@@ -34,7 +34,7 @@ export async function addGuildMedia(
     galleryMedia: IGalleryMedia
 ): Promise<number> {
     const mediaString = JSON.stringify(galleryMedia)
-    return await redis.rpush(`gallery:${guildId}`, mediaString)
+    return await redis.lpush(`gallery:${guildId}`, mediaString)
 }
 
 export async function removeGuildMediaById(
