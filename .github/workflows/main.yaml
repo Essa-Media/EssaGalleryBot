@@ -1,0 +1,23 @@
+#workflow name
+name: "Build & Deploy Bot"
+
+#event, trigger action that running our Jobs.
+#In this file we trigger pm2-configuration every we push code to repository.
+on: [push]
+jobs:
+  build-and-deploy: 
+    runs-on: self-hosted
+    env:
+      TOKEN: ${{secrets.TOKEN}}
+      CLIENT_ID: ${{secrets.CLIENT_ID}}
+      REDIS_URL: ${{secrets.REDIS_URI}}
+      CLOUDINARY_URL: ${{secrets.CLOUDINARY_URL}}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Install Package
+      run: "yarn install --immutable --immutable-cache --check-cache"
+    - run: "yarn run build"
+    - name: Deploy To Server
+      run: "pm2 status | grep -q essabot && pm2 restart essabot --update-env || pm2 start yarn --name essabot -- run production"
+    
