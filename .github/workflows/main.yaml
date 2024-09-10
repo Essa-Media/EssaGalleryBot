@@ -7,7 +7,7 @@ jobs:
     env:
       TOKEN: ${{secrets.TOKEN}}
       CLIENT_ID: ${{secrets.CLIENT_ID}}
-      REDIS_URL: ${{secrets.REDIS_URI}}
+      REDIS_URI: ${{secrets.REDIS_URI}}
       CLOUDINARY_URL: ${{secrets.CLOUDINARY_URL}}
     steps:
     - name: Checkout code
