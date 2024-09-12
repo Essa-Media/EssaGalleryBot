@@ -91,7 +91,7 @@ class GalleryMessage {
         return new EmbedBuilder()
             .setColor("Yellow")
             .setImage(uploadResult.url)
-            .setAuthor({ url: "https://example.com", name: "Essa Gallery", iconURL: "https://i.imgur.com/pwXfsLz.jpeg" })
+            .setAuthor({ url: "https://essa-media.github.io/EssaGallery/", name: "Essa Gallery", iconURL: "https://i.imgur.com/pwXfsLz.jpeg" })
             .setFooter({ text: uploadResult.public_id })
             .setDescription(`Uploaded by ${msg.author}`)
             .setTimestamp()
