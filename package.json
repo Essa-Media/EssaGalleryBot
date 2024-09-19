@@ -1,6 +1,6 @@
 {
   "name": "essagallerybot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Discord bot for Essa Gallery Project",
   "main": "./build",
   "repository": "https://github.com/Essa-Media/EssaGalleryBot",
@@ -10,13 +10,15 @@
     "dev": "npx nodemon ./src/index.ts | npx pino-pretty",
     "dev-no-pretty": "npx nodemon ./src/index.ts",
     "build": "tsc",
-    "production": "node ."
+    "production": "node .",
+    "release": "npx standard-version"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",
     "@types/pino": "^7.0.5",
     "nodemon": "^3.1.4",
     "pino-pretty": "^11.2.2",
+    "standard-version": "^9.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
