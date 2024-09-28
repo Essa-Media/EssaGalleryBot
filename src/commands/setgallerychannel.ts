@@ -14,7 +14,7 @@ export default {
                 .setRequired(true)    
             )
             
-            .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels),
+            // .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels),
     execute: async (interaction: ChatInputCommandInteraction) => {
         const imageryChannel = await setDiscordChannelId(interaction.guildId!, interaction.options.getChannel("channel")?.id!)
         interaction.reply(`Successfully set the gallery channel to ${interaction.options.getChannel("channel")}`)
