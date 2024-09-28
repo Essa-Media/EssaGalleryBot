@@ -12,7 +12,7 @@ export default {
                 .setDescription("text channel")
                 .addChannelTypes(ChannelType.GuildText)
                 .setRequired(true)    
-            )
+            ),
             
             // .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels),
     execute: async (interaction: ChatInputCommandInteraction) => {
